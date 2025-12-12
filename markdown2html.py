@@ -21,8 +21,8 @@ def main() -> int:
         print(f"Missing {input_path_arg}", file=sys.stderr)
         return 1
 
-    # Placeholder: copy content as-is; conversion will be added in later steps.
-    output_path.write_text(input_path.read_text(encoding="utf-8"), encoding="utf-8")
+    # For this initial step, no conversion is required; simply succeed silently.
+    _ = output_path  # placeholder to acknowledge variable until conversion is added
     return 0
 
 
