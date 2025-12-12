@@ -23,7 +23,7 @@ def main() -> int:
 
     # For this initial step, just copy the input content to the output file.
     output_path.write_text(input_path.read_text(encoding="utf-8"), encoding="utf-8")
-    return 1
+    return 0
 
 
 if __name__ == "__main__":
