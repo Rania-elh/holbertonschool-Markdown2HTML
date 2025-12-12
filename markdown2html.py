@@ -11,11 +11,14 @@ def main() -> int:
         print("Usage: ./markdown2html.py README.md README.html", file=sys.stderr)
         return 1
 
-    input_path = Path(sys.argv[1])
-    output_path = Path(sys.argv[2])
+    input_path_arg = sys.argv[1]
+    output_path_arg = sys.argv[2]
+
+    input_path = Path(input_path_arg)
+    output_path = Path(output_path_arg)
 
     if not input_path.is_file():
-        print(f"Missing {input_path.name}", file=sys.stderr)
+        print(f"Missing {input_path_arg}", file=sys.stderr)
         return 1
 
     # Placeholder: copy content as-is; conversion will be added in later steps.
