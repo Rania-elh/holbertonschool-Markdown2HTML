@@ -21,11 +21,13 @@ def main() -> int:
         print(f"Missing {input_path_arg}", file=sys.stderr)
         return 1
 
-    # For this initial step, no conversion is required; simply succeed silently.
-    _ = output_path  # placeholder to acknowledge variable until conversion is added
-    return 0
+    # For this initial step, just copy the input content to the output file.
+    output_path.write_text(input_path.read_text(encoding="utf-8"), encoding="utf-8")
+    return 1
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    exit_code = main()
+    # Use sys.exit to propagate the exact code in all shells/OS.
+    sys.exit(exit_code)
 
