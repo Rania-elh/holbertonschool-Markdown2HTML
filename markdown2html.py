@@ -1,26 +1,21 @@
 #!/usr/bin/python3
-"""Markdown2HTML Task 0 - validate args and create output file."""
+"""
+Markdown to HTML - Task 0
+"""
 
 import sys
 import os
 
 if __name__ == "__main__":
-    # Vérifie qu'il y a 2 arguments
+    # Not enough arguments
     if len(sys.argv) < 3:
         sys.stderr.write("Usage: ./markdown2html.py README.md README.html\n")
         sys.exit(1)
 
-    md_file = sys.argv[1]
-    html_file = sys.argv[2]
-
-    # Vérifie que le Markdown existe
-    if not os.path.isfile(md_file):
-        sys.stderr.write(f"Missing {md_file}\n")
+    # Markdown file does not exist
+    if not os.path.isfile(sys.argv[1]):
+        sys.stderr.write(f"Missing {sys.argv[1]}\n")
         sys.exit(1)
 
-    # Crée le fichier HTML vide
-    with open(html_file, 'w', encoding='utf-8') as f:
-        pass  # rien à écrire pour Task 0
-
-    # Exit avec succès
+    # SUCCESS: do absolutely nothing else
     sys.exit(0)
